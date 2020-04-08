@@ -400,6 +400,10 @@ class _DatePickerState extends State<_DatePickerComponent> {
                     widget.pickerModel.layoutProportions()[2], (index) {
                     widget.pickerModel.setRightIndex(index);
                     _notifyDateChanged();
+                     setState(() {
+                      refreshScrollOffset();
+                      _notifyDateChanged();
+                    });
                   }, null)
                 : null,
           ),
